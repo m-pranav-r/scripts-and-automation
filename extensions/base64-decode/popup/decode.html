@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="decode.css">
+    <script>
+        function DecodeTextFromClipboard() {
+  console.log("Button click triggered.")
+  let decodedText;
+  navigator.clipboard
+    .readText()
+    .then(
+      (clipText) => (decodedText = atob(clipText))
+    );
+  document.querySelector('decoded > p').innerHTML = decodedText;
+  console.log(decodedText);
+}
+    </script>
+</head>
+<body>
+    <div id="main-content">
+        <div id="encoded">
+            <p>Contains encrypted text.</p>
+        </div>
+        <div id="exec">
+            <button id="decode-button" onclick="DecodeTextFromClipboard">Decode</button>
+        </div>
+        <div id="decoded">
+            <p>Check here for the decrypted goodies!</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+
+  "manifest_version": 2,
+  "name": "Base64 Decode",
+  "version": "1.0",
+
+  "description": "Decodes clipboard selection from Base64.",
+
+  "icons": {
+    "48": "icons/base64.png"
+  },
+
+  "permissions":[
+    "activeTab",
+    "contextMenus",
+    "clipboardRead"
+  ],
+
+  "content_security_policy": "default-src 'self'",
+
+  "browser_action":{
+    "default_title": "Base64 Decode",
+    "default_popup": "popup/decode.html"
+  }
+}
