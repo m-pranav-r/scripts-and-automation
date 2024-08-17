@@ -21,14 +21,14 @@ function sendPlexRequest(start, end, name, ip){
         return doc.getElementsByTagName("Part")[0].attributes[3].nodeValue; //get full filepath
     })
     .then(async (filePath) => {
-        exec(`ffmpeg -ss ${start} -to ${end} -i "${filePath}" -ss ${start} -vf subtitles="${
+        exec(`ffmpeg -ss ${start} -to ${end} -copyts -i "${filePath}" -vf subtitles="${
                     filePath
                     .replaceAll('\\','\\\\\\\\')
                     .replaceAll('\'','\\\\\\\'')
                     .replaceAll(':', "\\\\\\:")
                     .replaceAll('[', '\\\\\\[')
                     .replaceAll(']', '\\\\\\]')
-                }" -map_chapters -1 -y "${name}.mkv"`, 
+                }" -vcodec libx265 -crf 35 -c:a copy -ss ${start} -to ${end} -y "${name}.mp4"`, 
                 (err, stdout, stderr) => {
             if(err) console.log(err);
         });
