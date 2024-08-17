@@ -1,0 +1,15 @@
+{
+  "name": "rider-clip",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "run": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "xmldom": "^0.6.0"
+  }
+}

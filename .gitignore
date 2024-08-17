@@ -1,0 +1,6 @@
+*.mkv
+.mkv
+node_modules/
+*.env
+.env
+ffmpeg.exe
