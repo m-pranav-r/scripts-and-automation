@@ -1,5 +1,9 @@
 *.mkv
+*.mp4
+*.m4a
 .mkv
+.mp4
+.m4a
 node_modules/
 *.env
 .env
